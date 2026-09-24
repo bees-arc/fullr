@@ -19,75 +19,105 @@ export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       {/* ============================================================== */}
-      {/* 1. HERO SECTION: Video Background (Bright & Authentic)          */}
+      {/* 1. HERO SECTION: Video Background + Bottom Bar (Spicy Full'r)   */}
       {/* ============================================================== */}
       <section
-        className="relative flex items-end justify-center overflow-hidden bg-gray-900"
+        className="relative flex flex-col justify-between overflow-hidden bg-gray-950"
         style={{ height: "100dvh", minHeight: "100svh" }}
       >
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        {/* Upper Area: Autoplaying Video */}
+        <div className="relative flex-1 w-full min-h-0 overflow-hidden">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+          >
+            <source src="/assets/fullr-hero.mp4" type="video/mp4" />
+          </video>
+
+          {/* Subtle bottom gradient to blend smoothly */}
+          <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
+        </div>
+
+        {/* Bottom Bar: Spicy Full'r Badge + Action Buttons (Under the Video) */}
+        <div
+          className="relative z-10 w-full bg-[#EA1E35] border-t-4 border-[#FFCA05] text-white shadow-2xl px-4 sm:px-8 py-2.5 sm:py-4 flex-shrink-0"
+          style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom, 0.75rem))" }}
         >
-          <source src="/assets/fullr-hero.mp4" type="video/mp4" />
-        </video>
+          <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 sm:gap-6">
+            {/* Left: Spicy Full'r Icon & Motto */}
+            <div className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 relative flex-shrink-0 drop-shadow-md transition-transform hover:scale-105">
+                <Image
+                  src="/assets/spicy-f.svg"
+                  alt="Spicy Full'r"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <div className="hidden sm:block">
+                <span className="block text-[11px] font-black uppercase tracking-widest text-[#FFCA05]">
+                  Hot &amp; Bold
+                </span>
+                <span className="block text-base sm:text-lg font-black uppercase tracking-wider text-white">
+                  Spicy Full&apos;r
+                </span>
+              </div>
+            </div>
 
-        {/* Bottom gradient for button legibility */}
-        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
+            {/* Right: CTA Buttons */}
+            {/* Mobile: 3 Compact Round Buttons */}
+            <div className="flex sm:hidden flex-row items-center gap-2.5 justify-end flex-shrink-0">
+              <Link
+                href="/menu"
+                aria-label="Explore Menu"
+                className="w-11 h-11 rounded-full bg-white text-[#EA1E35] flex items-center justify-center shadow-lg active:scale-90 transition-all font-bold"
+              >
+                <Utensils className="w-5 h-5" />
+              </Link>
+              <a
+                href="tel:+94112116909"
+                aria-label="Order Now"
+                className="w-11 h-11 rounded-full bg-[#FFCA05] text-[#3C2760] flex items-center justify-center shadow-lg active:scale-90 transition-all font-bold"
+              >
+                <Phone className="w-5 h-5" />
+              </a>
+              <Link
+                href="/locate"
+                aria-label="Locate Us"
+                className="w-11 h-11 rounded-full bg-white text-[#3C2760] flex items-center justify-center shadow-lg active:scale-90 transition-all font-bold"
+              >
+                <MapPin className="w-5 h-5" />
+              </Link>
+            </div>
 
-        {/* Buttons — absolutely pinned to bottom */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 flex justify-center pb-8 sm:pb-12 px-6"
-          style={{ paddingBottom: "max(2rem, env(safe-area-inset-bottom, 2rem))" }}
-        >
-          {/* Mobile: icon-only circles */}
-          <div className="flex sm:hidden flex-row items-center gap-6 justify-center">
-            <Link
-              href="/menu"
-              aria-label="Explore Menu"
-              className="w-16 h-16 rounded-full bg-[#EA1E35] flex items-center justify-center shadow-2xl active:scale-95 transition-all"
-            >
-              <Utensils className="w-7 h-7 text-white" />
-            </Link>
-            <a
-              href="tel:+94112116909"
-              aria-label="Order Now"
-              className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-2xl active:scale-95 transition-all"
-            >
-              <Phone className="w-7 h-7 text-[#3C2760]" />
-            </a>
-            <Link
-              href="/locate"
-              aria-label="Locate Us"
-              className="w-16 h-16 rounded-full bg-[#FFCA05] flex items-center justify-center shadow-2xl active:scale-95 transition-all"
-            >
-              <MapPin className="w-7 h-7 text-[#3C2760]" />
-            </Link>
-          </div>
-
-          {/* sm+: full text buttons */}
-          <div className="hidden sm:flex flex-row items-center gap-6">
-            <Link
-              href="/menu"
-              className="px-8 py-4 rounded-full bg-[#EA1E35] hover:bg-[#c91328] text-white font-black text-sm uppercase tracking-wider shadow-2xl transition-all hover:scale-105 active:scale-95"
-            >
-              Explore Our Menu
-            </Link>
-            <a
-              href="tel:+94112116909"
-              className="px-8 py-4 rounded-full bg-white hover:bg-gray-100 text-[#3C2760] font-black text-sm uppercase tracking-wider shadow-2xl transition-all hover:scale-105 active:scale-95"
-            >
-              Order Now
-            </a>
-            <Link
-              href="/locate"
-              className="px-8 py-4 rounded-full bg-[#FFCA05] hover:bg-[#FAAD1B] text-[#3C2760] font-black text-sm uppercase tracking-wider shadow-2xl transition-all hover:scale-105 active:scale-95"
-            >
-              Locate 8 Outlets
-            </Link>
+            {/* sm+: Full Text Action Buttons */}
+            <div className="hidden sm:flex flex-row items-center gap-3 sm:gap-4 flex-shrink-0">
+              <Link
+                href="/menu"
+                className="px-6 py-3 rounded-full bg-white hover:bg-gray-100 text-[#EA1E35] font-black text-sm uppercase tracking-wider shadow-lg transition-all hover:scale-105 active:scale-95 flex items-center gap-2"
+              >
+                <Utensils className="w-4 h-4" />
+                <span>Explore Menu</span>
+              </Link>
+              <a
+                href="tel:+94112116909"
+                className="px-6 py-3 rounded-full bg-[#FFCA05] hover:bg-[#faad1b] text-[#3C2760] font-black text-sm uppercase tracking-wider shadow-lg transition-all hover:scale-105 active:scale-95 flex items-center gap-2"
+              >
+                <Phone className="w-4 h-4" />
+                <span>Order Now</span>
+              </a>
+              <Link
+                href="/locate"
+                className="px-6 py-3 rounded-full bg-white/20 hover:bg-white text-white hover:text-[#3C2760] font-black text-sm uppercase tracking-wider border-2 border-white/50 shadow-lg transition-all hover:scale-105 active:scale-95 flex items-center gap-2"
+              >
+                <MapPin className="w-4 h-4" />
+                <span>Locate Outlets</span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
