@@ -106,7 +106,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left Column: Spicy icon + Burgerverse text + Our Menu Button */}
           <div className="space-y-6">
-            <div className="w-16 h-16 sm:w-20 sm:h-20 relative">
+            <div className="w-32 h-32 sm:w-40 sm:h-40 relative">
               <Image
                 src="/assets/spicy-f.svg"
                 alt="Spicy Full'r"
