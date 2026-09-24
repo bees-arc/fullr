@@ -79,7 +79,7 @@ export default function Header() {
   return (
     <>
       {/* ── Fixed Desktop / Standard Top Bar ───────────────── */}
-      <header className="fixed top-0 left-0 right-0 z-40 bg-[#EA1E35] py-6 sm:py-3.5 shadow-lg text-white">
+      <header className="fixed top-0 left-0 right-0 z-40 bg-[#EA1E35] py-6 sm:py-3.5 border-b-4 border-[#FFCA05] shadow-2xl text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
@@ -137,7 +137,7 @@ export default function Header() {
         style={{ height: "100dvh", minHeight: "100svh" }}
       >
         {/* Top Bar inside Menu */}
-        <div className="flex items-center justify-between px-5 sm:px-6 py-6 sm:py-4 border-b border-white/10 flex-shrink-0">
+        <div className="flex items-center justify-between px-5 sm:px-6 py-6 sm:py-4 border-b-4 border-[#FFCA05] flex-shrink-0">
           <Link
             href="/"
             onClick={() => setIsOpen(false)}
