@@ -34,19 +34,13 @@ export default function Header() {
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-white/95 backdrop-blur-md py-3 shadow-lg border-b border-gray-100 text-gray-900"
-            : "bg-gradient-to-b from-[#EA1E35]/80 via-[#EA1E35]/30 to-transparent py-4 text-white"
-        }`}
-      >
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#EA1E35] py-3 shadow-lg text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative w-36 sm:w-44 h-11 transition-transform duration-300 group-hover:scale-105">
               <Image
-                src={scrolled ? "/assets/logo-112.png" : "/assets/logo-burgers-white.svg"}
+                src="/assets/logo-burgers-white.svg"
                 alt="Full'r Burgers - Own Your Mess"
                 fill
                 priority
@@ -59,28 +53,13 @@ export default function Header() {
           <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
-              if (scrolled) {
-                return (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${
-                      isActive
-                        ? "bg-[#EA1E35] text-white shadow-md shadow-[#EA1E35]/20"
-                        : "text-gray-700 hover:text-[#EA1E35] hover:bg-gray-100"
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
-                );
-              }
               return (
                 <Link
                   key={link.name}
                   href={link.href}
                   className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${
                     isActive
-                      ? "bg-[#FFCA05] text-[#0c0e18] shadow-md shadow-[#FFCA05]/30 font-black"
+                      ? "bg-[#FFCA05] text-[#3C2760] shadow-md shadow-[#FFCA05]/30 font-black"
                       : "text-white hover:text-[#FFCA05] hover:bg-white/10"
                   }`}
                 >
@@ -97,9 +76,7 @@ export default function Header() {
           <div className="flex items-center gap-2 lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`p-2.5 rounded-xl transition-all focus:outline-none ${
-                scrolled ? "bg-gray-100 text-gray-800" : "bg-white/20 text-white"
-              }`}
+              className="p-2.5 rounded-xl transition-all focus:outline-none bg-white/20 text-white"
               aria-label="Toggle Navigation Menu"
             >
               {isOpen ? <X className="w-6 h-6 text-[#EA1E35]" /> : <Menu className="w-6 h-6" />}
