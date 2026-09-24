@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+:root {
+  --fullr-yellow: #FFCA05;
+  --fullr-yellow-dark: #FAAD1B;
+  --fullr-red: #EA1E35;
+  --fullr-red-hover: #c91328;
+  --fullr-green: #008A6B;
+  --fullr-purple: #6851A1;
+  --fullr-maroon: #8A321C;
+  --fullr-navy: #252960;
+  --fullr-border: rgba(0, 0, 0, 0.08);
+}
+
+@theme {
+  --color-primary: #FFCA05;
+  --color-primary-dark: #FAAD1B;
+  --color-accent-red: #EA1E35;
+  --color-accent-green: #008A6B;
+  --color-accent-purple: #6851A1;
+  --color-maroon: #8A321C;
+  --color-navy: #252960;
+  
+  --font-baloo: var(--font-baloo), cursive, sans-serif;
+  --font-script: var(--font-yellowtail), cursive;
+  --font-roboto: var(--font-roboto), sans-serif;
+}
+
+/* Custom Base Styles */
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #ffffff;
+}
+
+body {
+  background-color: #ffffff;
+  color: #1f2937;
+  font-family: var(--font-roboto), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Typography Helpers */
+.font-display {
+  font-family: var(--font-baloo), cursive, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.font-script {
+  font-family: var(--font-yellowtail), cursive;
+}
+
+/* Subtle Shadows & Hover FX */
+.shadow-fullr {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-card {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1.2deg); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Hide scrollbars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
