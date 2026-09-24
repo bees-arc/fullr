@@ -53,8 +53,8 @@ export default function AboutPage() {
       <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
         <div className="relative min-h-[420px] lg:min-h-auto overflow-hidden">
           <Image
-            src="/assets/Gojira.jpg"
-            alt="Full'r Gojira Burger"
+            src="/assets/Dragon-Bait-banner.jpg"
+            alt="Full'r Dragon Bait Burger"
             fill
             className="object-cover"
           />
