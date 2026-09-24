@@ -38,12 +38,12 @@ export default function HomePage() {
             <source src="/assets/fullr-hero.mp4" type="video/mp4" />
           </video>
 
-          {/* Subtle bottom gradient to blend smoothly */}
-          <div className="absolute inset-x-0 bottom-0 h-36 sm:h-48 bg-gradient-to-t from-black/85 via-black/40 to-transparent pointer-events-none" />
+          {/* Soft, light bottom gradient to blend smoothly */}
+          <div className="absolute inset-x-0 bottom-0 h-28 sm:h-36 bg-gradient-to-t from-black/40 via-black/15 to-transparent pointer-events-none" />
 
           {/* Slogan on top of the red part, overlaid on the video, positioned upwards */}
           <div className="absolute inset-x-0 bottom-8 sm:bottom-14 md:bottom-16 z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 flex justify-center items-center pointer-events-none">
-            <h2 className="font-display font-[family-name:var(--font-baloo)] font-black uppercase text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-none text-[#f5f4ef] drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] tracking-wide text-center">
+            <h2 className="font-display font-[family-name:var(--font-baloo)] font-black uppercase text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-none text-[#f5f4ef] drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)] tracking-wide text-center">
               LET&apos;S MAKE A MESS
             </h2>
           </div>
