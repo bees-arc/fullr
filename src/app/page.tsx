@@ -10,59 +10,61 @@ import {
   MapPin,
   Phone,
   X,
-  Volume2,
-  VolumeX,
   Utensils,
 } from "lucide-react";
 
 export default function HomePage() {
   const [selectedBurgerModal, setSelectedBurgerModal] = useState<Burger | null>(null);
-  const [isMuted, setIsMuted] = useState(true);
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
       {/* ============================================================== */}
       {/* 1. HERO SECTION: Video Background (Bright & Authentic)          */}
       {/* ============================================================== */}
-      <section className="relative min-h-screen flex items-end justify-center overflow-hidden bg-gray-900">
+      <section
+        className="relative flex items-end justify-center overflow-hidden bg-gray-900"
+        style={{ height: "100dvh", minHeight: "100svh" }}
+      >
         <video
           autoPlay
-          muted={isMuted}
+          muted
           loop
           playsInline
           preload="auto"
-          className="absolute inset-0 w-full h-full object-cover scale-100 sm:scale-105 pointer-events-none"
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         >
           <source src="/assets/fullr-hero.mp4" type="video/mp4" />
         </video>
 
+        {/* Bottom gradient for button legibility */}
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
 
-
-        {/* Hero Overlay Content — pinned to bottom */}
-        <div className="relative z-10 w-full px-4 pb-10 sm:pb-20 text-center flex flex-col items-center">
-
+        {/* Buttons — absolutely pinned to bottom */}
+        <div className="absolute bottom-0 left-0 right-0 z-10 flex justify-center pb-8 sm:pb-12 px-6"
+          style={{ paddingBottom: "max(2rem, env(safe-area-inset-bottom, 2rem))" }}
+        >
           {/* Mobile: icon-only circles */}
-          <div className="flex sm:hidden flex-row items-center gap-5 justify-center">
+          <div className="flex sm:hidden flex-row items-center gap-6 justify-center">
             <Link
               href="/menu"
               aria-label="Explore Menu"
-              className="w-14 h-14 rounded-full bg-[#EA1E35] flex items-center justify-center shadow-2xl active:scale-95 transition-all"
+              className="w-16 h-16 rounded-full bg-[#EA1E35] flex items-center justify-center shadow-2xl active:scale-95 transition-all"
             >
-              <Utensils className="w-6 h-6 text-white" />
+              <Utensils className="w-7 h-7 text-white" />
             </Link>
             <a
               href="tel:+94112116909"
               aria-label="Order Now"
-              className="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-2xl active:scale-95 transition-all"
+              className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-2xl active:scale-95 transition-all"
             >
-              <Phone className="w-6 h-6 text-[#3C2760]" />
+              <Phone className="w-7 h-7 text-[#3C2760]" />
             </a>
             <Link
               href="/locate"
               aria-label="Locate Us"
-              className="w-14 h-14 rounded-full bg-[#FFCA05] flex items-center justify-center shadow-2xl active:scale-95 transition-all"
+              className="w-16 h-16 rounded-full bg-[#FFCA05] flex items-center justify-center shadow-2xl active:scale-95 transition-all"
             >
-              <MapPin className="w-6 h-6 text-[#3C2760]" />
+              <MapPin className="w-7 h-7 text-[#3C2760]" />
             </Link>
           </div>
 
@@ -88,16 +90,8 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-
-        {/* Video Sound Toggle */}
-        <button
-          onClick={() => setIsMuted(!isMuted)}
-          className="absolute bottom-6 right-6 z-20 p-3 rounded-full bg-white/80 hover:bg-white text-gray-800 shadow-lg backdrop-blur-md transition-all"
-          aria-label={isMuted ? "Unmute video" : "Mute video"}
-        >
-          {isMuted ? <VolumeX className="w-5 h-5 text-gray-700" /> : <Volume2 className="w-5 h-5 text-[#EA1E35]" />}
-        </button>
       </section>
+
 
       {/* ============================================================== */}
       {/* 2. BRIGHT RED CONTAINER (#EA1E35): Burgerverse & Spicy Section  */}
@@ -106,7 +100,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left Column: Spicy icon + Burgerverse text + Our Menu Button */}
           <div className="space-y-6">
-            <div className="w-32 h-32 sm:w-40 sm:h-40 relative">
+            <div className="w-56 h-56 sm:w-72 sm:h-72 relative">
               <Image
                 src="/assets/spicy-f.svg"
                 alt="Spicy Full'r"
