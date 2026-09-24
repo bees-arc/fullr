@@ -39,7 +39,14 @@ export default function HomePage() {
           </video>
 
           {/* Subtle bottom gradient to blend smoothly */}
-          <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-36 sm:h-48 bg-gradient-to-t from-black/85 via-black/40 to-transparent pointer-events-none" />
+
+          {/* Slogan on top of the red part, overlaid on the video, positioned upwards */}
+          <div className="absolute inset-x-0 bottom-8 sm:bottom-14 md:bottom-16 z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 flex justify-center items-center pointer-events-none">
+            <h2 className="font-display font-[family-name:var(--font-baloo)] font-black uppercase text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-none text-[#f5f4ef] drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] tracking-wide text-center">
+              LET&apos;S MAKE A MESS
+            </h2>
+          </div>
         </div>
 
         {/* Bottom Bar: Warning Logo + Action Buttons (Under the Video) */}
@@ -48,8 +55,8 @@ export default function HomePage() {
           style={{ paddingBottom: "max(1rem, env(safe-area-inset-bottom, 1rem))" }}
         >
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 sm:gap-6">
-            {/* Left: Huge WARNING! BURGERS AHEAD Logo (with at least 16px padding) */}
-            <div className="flex items-center flex-shrink-0 py-4 sm:py-5">
+            {/* Left: Huge WARNING! BURGERS AHEAD Logo */}
+            <div className="flex items-center flex-shrink-0 py-2 sm:py-3">
               <div className="w-40 h-20 sm:w-56 sm:h-28 md:w-72 md:h-36 relative flex-shrink-0 drop-shadow-lg transition-transform hover:scale-105">
                 <Image
                   src="/assets/spicy-f.svg"
