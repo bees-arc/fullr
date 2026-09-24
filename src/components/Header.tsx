@@ -79,11 +79,11 @@ export default function Header() {
   return (
     <>
       {/* ── Fixed Desktop / Standard Top Bar ───────────────── */}
-      <header className="fixed top-0 left-0 right-0 z-40 bg-[#EA1E35] py-3 shadow-lg text-white">
+      <header className="fixed top-0 left-0 right-0 z-40 bg-[#EA1E35] py-6 sm:py-3.5 shadow-lg text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-36 sm:w-44 h-11 transition-transform duration-300 group-hover:scale-105">
+            <div className="relative w-44 sm:w-44 h-13 sm:h-11 transition-transform duration-300 group-hover:scale-105">
               <Image
                 src="/assets/logo-burgers-white.svg"
                 alt="Full'r Burgers"
@@ -119,7 +119,7 @@ export default function Header() {
           {/* Mobile hamburger toggle */}
           <button
             onClick={() => setIsOpen(true)}
-            className="flex items-center justify-center lg:hidden p-2.5 rounded-xl bg-white/20 hover:bg-white/30 text-white transition-all focus:outline-none active:scale-95"
+            className="flex items-center justify-center lg:hidden p-3.5 rounded-2xl bg-white/20 hover:bg-white/30 text-white transition-all focus:outline-none active:scale-95"
             aria-label="Open menu"
           >
             <Menu className="w-6 h-6 text-white" />
@@ -137,11 +137,11 @@ export default function Header() {
         style={{ height: "100dvh", minHeight: "100svh" }}
       >
         {/* Top Bar inside Menu */}
-        <div className="flex items-center justify-between px-5 sm:px-6 py-4 border-b border-white/10 flex-shrink-0">
+        <div className="flex items-center justify-between px-5 sm:px-6 py-6 sm:py-4 border-b border-white/10 flex-shrink-0">
           <Link
             href="/"
             onClick={() => setIsOpen(false)}
-            className="relative w-36 sm:w-44 h-11"
+            className="relative w-44 sm:w-44 h-13 sm:h-11"
           >
             <Image
               src="/assets/logo-burgers-white.svg"
