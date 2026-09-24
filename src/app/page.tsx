@@ -23,7 +23,7 @@ export default function HomePage() {
       {/* ============================================================== */}
       {/* 1. HERO SECTION: Video Background (Bright & Authentic)          */}
       {/* ============================================================== */}
-      <section className="relative min-h-[80vh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-gray-900">
+      <section className="relative min-h-[80vh] lg:min-h-screen flex items-end justify-center overflow-hidden bg-gray-900">
         <video
           autoPlay
           muted={isMuted}
@@ -35,40 +35,26 @@ export default function HomePage() {
           <source src="/assets/fullr-hero.mp4" type="video/mp4" />
         </video>
 
-        {/* Clean Subtle Overlay for text legibility */}
-        <div className="absolute inset-0 bg-[#EA1E35]/20 mix-blend-multiply pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/30 pointer-events-none" />
 
-        {/* Hero Overlay Content */}
-        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center py-24 flex flex-col items-center">
-          <div className="relative w-48 sm:w-64 md:w-80 h-16 sm:h-24 mb-6">
-            <Image
-              src="/assets/logo-burgers-white.svg"
-              alt="Full'r Burgers"
-              fill
-              priority
-              className="object-contain drop-shadow-[0_4px_25px_rgba(0,0,0,0.6)]"
-            />
-          </div>
 
-          <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.7)]">
-            OWN YOUR <span className="text-[#FFCA05]">MESS</span>
-          </h1>
-
-          <p className="font-script text-2xl sm:text-4xl text-[#FFCA05] mt-2 drop-shadow-md">
-            If you&apos;re not making a mess, you&apos;re not doing it right!
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center gap-4 mt-8">
+        {/* Hero Overlay Content — pinned to bottom */}
+        <div className="relative z-10 w-full px-4 pb-16 sm:pb-20 text-center flex flex-col items-center">
+          <div className="flex flex-col sm:flex-row items-center gap-12">
             <Link
               href="/menu"
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#FFCA05] hover:bg-[#FAAD1B] text-[#0c0e18] font-black text-sm uppercase tracking-wider shadow-2xl transition-all hover:scale-105 active:scale-95"
+              className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#EA1E35] hover:bg-[#c91328] text-white font-black text-sm uppercase tracking-wider shadow-2xl transition-all hover:scale-105 active:scale-95"
             >
               Explore Our Menu
             </Link>
+            <a
+              href="tel:+94112116909"
+              className="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-gray-100 text-[#3C2760] font-black text-sm uppercase tracking-wider shadow-2xl transition-all hover:scale-105 active:scale-95"
+            >
+              Order Now
+            </a>
             <Link
               href="/locate"
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#EA1E35] hover:bg-[#c91328] text-white font-black text-sm uppercase tracking-wider shadow-2xl transition-all hover:scale-105 active:scale-95"
+              className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#FFCA05] hover:bg-[#FAAD1B] text-[#3C2760] font-black text-sm uppercase tracking-wider shadow-2xl transition-all hover:scale-105 active:scale-95"
             >
               Locate 8 Outlets
             </Link>

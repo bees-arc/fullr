@@ -90,37 +90,11 @@ export default function Header() {
             })}
           </nav>
 
-          {/* Desktop Right Action */}
-          <div className="hidden lg:flex items-center gap-3">
-            <a
-              href="tel:+94112116909"
-              className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold transition-colors ${
-                scrolled
-                  ? "border border-gray-200 text-gray-800 hover:border-[#EA1E35] hover:text-[#EA1E35]"
-                  : "border border-white/30 text-white hover:border-[#FFCA05] hover:text-[#FFCA05]"
-              }`}
-            >
-              <Phone className="w-4 h-4 text-[#FFCA05]" />
-              <span>011 211 6909</span>
-            </a>
-
-            <Link
-              href="/menu"
-              className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#EA1E35] hover:bg-[#c91328] text-white font-black text-sm tracking-wider uppercase shadow-lg shadow-[#EA1E35]/30 hover:scale-105 active:scale-95 transition-all"
-            >
-              <Utensils className="w-4 h-4" />
-              <span>ORDER NOW</span>
-            </Link>
-          </div>
+          {/* Desktop Right Action — empty, ORDER NOW and phone removed */}
+          <div className="hidden lg:flex items-center gap-3" />
 
           {/* Mobile Hamburger Toggle */}
           <div className="flex items-center gap-2 lg:hidden">
-            <Link
-              href="/menu"
-              className="px-3.5 py-1.5 rounded-full bg-[#EA1E35] text-white text-xs font-black shadow-md uppercase"
-            >
-              ORDER
-            </Link>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`p-2.5 rounded-xl transition-all focus:outline-none ${
