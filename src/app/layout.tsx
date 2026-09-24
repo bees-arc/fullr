@@ -3,7 +3,6 @@ import { Baloo_2, Yellowtail, Roboto } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import MobileBottomBar from "@/components/MobileBottomBar";
 
 const baloo = Baloo_2({
   variable: "--font-baloo",
@@ -80,7 +79,6 @@ export default function RootLayout({
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
-        <MobileBottomBar />
       </body>
     </html>
   );

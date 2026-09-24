@@ -12,6 +12,7 @@ import {
   X,
   Volume2,
   VolumeX,
+  Utensils,
 } from "lucide-react";
 
 export default function HomePage() {
@@ -23,7 +24,7 @@ export default function HomePage() {
       {/* ============================================================== */}
       {/* 1. HERO SECTION: Video Background (Bright & Authentic)          */}
       {/* ============================================================== */}
-      <section className="relative min-h-[80vh] lg:min-h-screen flex items-end justify-center overflow-hidden bg-gray-900">
+      <section className="relative min-h-screen flex items-end justify-center overflow-hidden bg-gray-900">
         <video
           autoPlay
           muted={isMuted}
@@ -38,23 +39,50 @@ export default function HomePage() {
 
 
         {/* Hero Overlay Content — pinned to bottom */}
-        <div className="relative z-10 w-full px-4 pb-16 sm:pb-20 text-center flex flex-col items-center">
-          <div className="flex flex-col sm:flex-row items-center gap-12">
+        <div className="relative z-10 w-full px-4 pb-10 sm:pb-20 text-center flex flex-col items-center">
+
+          {/* Mobile: icon-only circles */}
+          <div className="flex sm:hidden flex-row items-center gap-5 justify-center">
             <Link
               href="/menu"
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#EA1E35] hover:bg-[#c91328] text-white font-black text-sm uppercase tracking-wider shadow-2xl transition-all hover:scale-105 active:scale-95"
+              aria-label="Explore Menu"
+              className="w-14 h-14 rounded-full bg-[#EA1E35] flex items-center justify-center shadow-2xl active:scale-95 transition-all"
+            >
+              <Utensils className="w-6 h-6 text-white" />
+            </Link>
+            <a
+              href="tel:+94112116909"
+              aria-label="Order Now"
+              className="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-2xl active:scale-95 transition-all"
+            >
+              <Phone className="w-6 h-6 text-[#3C2760]" />
+            </a>
+            <Link
+              href="/locate"
+              aria-label="Locate Us"
+              className="w-14 h-14 rounded-full bg-[#FFCA05] flex items-center justify-center shadow-2xl active:scale-95 transition-all"
+            >
+              <MapPin className="w-6 h-6 text-[#3C2760]" />
+            </Link>
+          </div>
+
+          {/* sm+: full text buttons */}
+          <div className="hidden sm:flex flex-row items-center gap-6">
+            <Link
+              href="/menu"
+              className="px-8 py-4 rounded-full bg-[#EA1E35] hover:bg-[#c91328] text-white font-black text-sm uppercase tracking-wider shadow-2xl transition-all hover:scale-105 active:scale-95"
             >
               Explore Our Menu
             </Link>
             <a
               href="tel:+94112116909"
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-gray-100 text-[#3C2760] font-black text-sm uppercase tracking-wider shadow-2xl transition-all hover:scale-105 active:scale-95"
+              className="px-8 py-4 rounded-full bg-white hover:bg-gray-100 text-[#3C2760] font-black text-sm uppercase tracking-wider shadow-2xl transition-all hover:scale-105 active:scale-95"
             >
               Order Now
             </a>
             <Link
               href="/locate"
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#FFCA05] hover:bg-[#FAAD1B] text-[#3C2760] font-black text-sm uppercase tracking-wider shadow-2xl transition-all hover:scale-105 active:scale-95"
+              className="px-8 py-4 rounded-full bg-[#FFCA05] hover:bg-[#FAAD1B] text-[#3C2760] font-black text-sm uppercase tracking-wider shadow-2xl transition-all hover:scale-105 active:scale-95"
             >
               Locate 8 Outlets
             </Link>
