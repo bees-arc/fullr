@@ -42,29 +42,22 @@ export default function HomePage() {
           <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
         </div>
 
-        {/* Bottom Bar: Spicy Full'r Badge + Action Buttons (Under the Video) */}
+        {/* Bottom Bar: Warning Logo + Action Buttons (Under the Video) */}
         <div
-          className="relative z-10 w-full bg-[#EA1E35] border-t-4 border-[#FFCA05] text-white shadow-2xl px-4 sm:px-8 py-2.5 sm:py-4 flex-shrink-0"
-          style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom, 0.75rem))" }}
+          className="relative z-10 w-full bg-[#EA1E35] border-t-4 border-[#FFCA05] text-white shadow-2xl px-4 sm:px-8 py-4 sm:py-5 flex-shrink-0"
+          style={{ paddingBottom: "max(1rem, env(safe-area-inset-bottom, 1rem))" }}
         >
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 sm:gap-6">
-            {/* Left: Spicy Full'r Icon & Motto */}
-            <div className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 relative flex-shrink-0 drop-shadow-md transition-transform hover:scale-105">
+            {/* Left: Huge WARNING! BURGERS AHEAD Logo (with at least 16px padding) */}
+            <div className="flex items-center flex-shrink-0 py-4 sm:py-5">
+              <div className="w-40 h-20 sm:w-56 sm:h-28 md:w-72 md:h-36 relative flex-shrink-0 drop-shadow-lg transition-transform hover:scale-105">
                 <Image
                   src="/assets/spicy-f.svg"
-                  alt="Spicy Full'r"
+                  alt="Warning! Burgers Ahead"
                   fill
+                  priority
                   className="object-contain"
                 />
-              </div>
-              <div className="hidden sm:block">
-                <span className="block text-[11px] font-black uppercase tracking-widest text-[#FFCA05]">
-                  Hot &amp; Bold
-                </span>
-                <span className="block text-base sm:text-lg font-black uppercase tracking-wider text-white">
-                  Spicy Full&apos;r
-                </span>
               </div>
             </div>
 
@@ -128,17 +121,8 @@ export default function HomePage() {
       {/* ============================================================== */}
       <section className="bg-[#EA1E35] text-white py-16 sm:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          {/* Left Column: Spicy icon + Burgerverse text + Our Menu Button */}
+          {/* Left Column: Burgerverse text + Our Menu Button */}
           <div className="space-y-6">
-            <div className="w-56 h-56 sm:w-72 sm:h-72 relative">
-              <Image
-                src="/assets/spicy-f.svg"
-                alt="Spicy Full'r"
-                fill
-                className="object-contain"
-              />
-            </div>
-
             <p className="text-xl sm:text-2xl md:text-3xl font-bold leading-snug sm:leading-relaxed text-white">
               You&apos;re entering our burgerverse. Brace yourself for bold flavours, juicy patties, and mouthwatering toppings in every irresistibly satisfying bite!
             </p>
